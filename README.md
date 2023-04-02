@@ -16,8 +16,11 @@ Used Airflow versions:
     - 1.10
     - 2.5
     
-Telegram Bot link:
-https://t.me/stepik_airflow
+Dags:
+1) 
+2) Telegram Bot:
+    pip install apache-airflow-providers-telegram
+    
 
 
 
