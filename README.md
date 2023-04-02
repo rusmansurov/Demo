@@ -1,11 +1,11 @@
+***Folders***:
+1) airflow_dags. Contains demo DAG scripts.
+2) docker. Contain Airflow, PostgreSQL and dBeaver instances.
+
+---
 ***Main goals:***
 1. Demonstrate differnt Airflow technics and solutions.
 2. Show some interesing momemts.
-
----
-***Folders***:
-1) airflow_dags. Contains demo DAG scripts
-2) docker. Contain Airflow, PostgreSQL and dBeaver instances.
 ---
 ***Used services, solutions and languages:***
 1) Airflow
