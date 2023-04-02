@@ -1,27 +1,20 @@
-# Airflow folder
-
-## 1 Main goals:
-
-1. Demonstrate differnt technics and solutions.
+***Main goals:***
+1. Demonstrate differnt Airflow technics and solutions.
 2. Show some interesing momemts.
 
-***In each folder you may find demo with description in "README.md" file***
-
 ---
+***Folders***:
+1) airflow_dags. Contains demo DAG scripts
+2) docker. Contain Airflow, PostgreSQL and dBeaver instances.
+---
+***Used services, solutions and languages:***
+1) Airflow
+2) Docker
+3) PostgreSQL
+4) Bash
+5) Python
+___
 
-DBs: 
-    - PostgreSQL
-    - SQLite
-Used Airflow versions:
-    - 1.10
-    - 2.5
-    
-Dags:
-1) 
-2) Telegram Bot:
-    pip install apache-airflow-providers-telegram
-    
-
-
+***In each folder you may find demo with description in "README.md" file***
 
 ***Rustam***
