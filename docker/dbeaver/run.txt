@@ -1,0 +1,1 @@
+docker run -p 80:8978 -v /Users/natalya/Desktop/dbeaver/var/cloudbeaver/workspace:/opt/cloudbeaver/workspace -d dbeaver/cloudbeaver:latest
