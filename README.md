@@ -13,9 +13,20 @@
 3) PostgreSQL
 4) Bash
 5) Python
-___
 
+___
+***Below you may find results for DAGs presented in "airflow_dags" folder:***
+1. dag_load_file_to_dwh.py:
+![alt text](https://github.com/rusmansurov/Demo/blob/main/airflow_dags/Results/dag_load_file_to_dwh.png)
+
+2. dag_sales.py:
+![alt text](https://github.com/rusmansurov/Demo/blob/main/airflow_dags/Results/dag_sales.csv)
+
+3. dag_fail_telegram_message.py:
 ![alt text](https://github.com/rusmansurov/Demo/blob/main/airflow_dags/Results/dag_fail_telegram_message.jpg)
+
+4. dag_branches.py:
+![alt text](https://github.com/rusmansurov/Demo/blob/main/airflow_dags/Results/dag_branches.png)
 
 
 ***In each folder you may find demo with description in "README.md" file***
