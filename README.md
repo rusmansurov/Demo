@@ -28,6 +28,14 @@ ___
 
 
 ***4. dag_branches.py:***
+```python
+def branch(**kwargs):
+    rand_value = kwargs['ti'].xcom_pull(key='rand', task_ids='random_number')
+    if rand_value > 5:
+        return 'higher' 
+    else:
+        return 'lower'
+```
 ![alt text](https://github.com/rusmansurov/Demo/blob/main/airflow_dags/Results/dag_branches.png)
 
 ___
