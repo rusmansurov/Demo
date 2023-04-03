@@ -15,6 +15,9 @@
 5) Python
 ___
 
+![alt text](https://github.com/rusmansurov/Demo/blob/main/airflow_dags/Results/dag_fail_telegram_message.jpg)
+
+
 ***In each folder you may find demo with description in "README.md" file***
 
 ***Rustam***
