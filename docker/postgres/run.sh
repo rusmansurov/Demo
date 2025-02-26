@@ -1,3 +1,2 @@
 #!/bin/bash
-
-docker run --name pg -p 5432:5432 -e POSTGRES_PASSWORD=password -v "$(pwd)/scripts":/docker-entrypoint-initdb.d  -d postgres:12
+docker run --name pg -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=password -v "$(pwd)/scripts":/docker-entrypoint-initdb.d -v "$(pwd)/shared_folder":/mnt/shared_folder -v "$(pwd)/pg_data":/var/lib/postgresql/data -d postgres:17
