@@ -1,0 +1,68 @@
+version: "3.9" 
+services:
+  pg_catalog:
+    image: postgres:17
+    container_name: pg_catalog
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: iceberg
+    volumes:
+      - ./iceberg-setup.sql:/docker-entrypoint-initdb.d/iceberg-setup.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d iceberg"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - 5432:5432
+    networks:
+      - dlh-network
+  trino:
+    hostname: trino
+    container_name: trino
+    image: 'trinodb/trino:471'
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./catalog:/etc/trino/catalog
+    depends_on:
+      - pg_catalog
+    networks:
+      - dlh-network
+  minio:
+    hostname: minio
+    image: minio/minio
+    container_name: minio
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    volumes:
+      - minio-data:/mnt/data
+    environment:
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+    command: server /data --console-address ":9001"
+    networks:
+      - dlh-network
+  mc-job:
+    image: 'minio/mc'
+    container_name: mc-job
+    entrypoint: |
+      /bin/bash -c "
+      sleep 5;
+      /usr/bin/mc config --quiet host add myminio http://minio:9000 minio minio123;
+      /usr/bin/mc mb --quiet myminio/warehouse
+      "
+    depends_on:
+      - minio
+    networks:
+      - dlh-network
+
+volumes:
+  minio-data:
+    driver: local
+
+networks:
+  dlh-network:
+    driver: bridge
