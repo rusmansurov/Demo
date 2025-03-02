@@ -1,6 +1,6 @@
 ***Folders***:
 1) airflow_dags. Folder contains DAG demo scripts.
-2) docker. Folder contains Airflow, PostgreSQL and DBeaver instances used in current Demo porject.
+2) docker. Folder contains Iceberg Data Lakehouse, Airflow, PostgreSQL and DBeaver instances used in the porject.
 
 ---
 ***Main goals:***
@@ -9,12 +9,15 @@
 ---
 
 ***Used services, solutions and languages:***
-1) Airflow
-2) Docker
-3) PostgreSQL
-4) Bash
-5) Python
-6) SQL
+1) Trino
+2) Minio
+3) Airflow
+4) Docker
+5) PostgreSQL
+6) Bash
+7) Python
+8) SQL
+9) YAML
 ___
 
 ## Results for DAGs presented in "airflow_dags" folder:
