@@ -1,4 +1,4 @@
-Demo/docker contains Iceberg Data Lakehouse, Airflow, PostgreSQL and DBeaver instances.
+**Demo/docker contains Iceberg Data Lakehouse, Airflow, PostgreSQL and DBeaver instances.:**
 
 ---
 ***Main goals:***
