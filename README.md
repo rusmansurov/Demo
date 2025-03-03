@@ -17,5 +17,5 @@
 8) SQL
 9) YAML
 
-<br />
-***In each folder you may find demo with description in "README.md" file***<br /><br />
+
+*In each folder you may find demo with description in "README.md" file
