@@ -33,7 +33,7 @@ It might be usefull for any business and IT departments.
 
 ***3. dag_sales.py:***<br />
 In this case we have sales data downloaded into DWH, aggregated there and uploaded to the external folder. Airflow supports generation files aggregated in DWH data and uploading them into different external sources (Cloud, S3, ftp)
-![plot](/rusmansurov/Demo/docker/etc/images/dag_fail_telegram_message.jpg)
+![plot](./rusmansurov/Demo/docker/etc/images/dag_fail_telegram_message.jpg)
 
 ***4. dag_branches.py:***<br />
 Airflow supports branches. It brings to ETL proccesses to be flexiblity. We can build 1 proccess with different ETL ways depends on conditions.<br />
