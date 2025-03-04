@@ -1,14 +1,16 @@
 **Iceberg Lakehouse on Docker**
+
 This repository contains a Docker-based setup for deploying an Iceberg Lakehouse using Trino, MinIO, Hive Metastore, and PostgreSQL. It serves as a demonstration environment for working with Apache Iceberg, allowing you to experiment with modern data management approaches.
 
 **Project Components**
 
-*Trino* – a SQL query engine for data analytics.
-*MinIO* – an S3-compatible object storage for storing Parquet files.
-*Hive Metastore* – a metadata catalog for managing Iceberg table metadata.
-*PostgreSQL* – a database for storing Hive Metastore metadata.
+1. Trino – a SQL query engine for data analytics.
+2. MinIO* – an S3-compatible object storage for storing Parquet files.
+3. Hive Metastore – a metadata catalog for managing Iceberg table metadata.
+4. PostgreSQL – a database for storing Hive Metastore metadata.
 
 **Features**
+
 Deploy a local Iceberg Lakehouse using docker-compose.
 Store and process data in Parquet format.
 Query data using Trino.
@@ -18,6 +20,7 @@ Support for positional deletes and snapshot management in Iceberg.
 **Installation & Setup**
 1. Clone the repository.
 2. Start the containers:
+
    ```docker-compose up -d```
 4. Verify that all services are running:
  - Trino is available at http://localhost:8080
@@ -26,7 +29,21 @@ Support for positional deletes and snapshot management in Iceberg.
 
 **Usage**
 
-Once the setup is running, you can connect to Trino and run SQL queries against Iceberg tables:
+Once the setup is running, you can connect to Trino and run SQL queries against Iceberg tables by running trino CLI:
 
-SHOW SCHEMAS FROM iceberg;
-SELECT * FROM iceberg.default.my_table;
+```docker exec -it trino trino```
+
+```
+SHOW SCHEMAS FROM datalake;
+
+CREATE TABLE datalake.default.customers (
+    id integer,
+    customer_name varchar
+    )
+ WITH (
+    format = 'PARQUET',
+    location='s3a://datalake/trino/hive_catalog/customers')
+ ;
+ 
+SELECT * FROM datalake.default.customers;
+```
