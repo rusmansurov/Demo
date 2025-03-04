@@ -23,17 +23,17 @@ ___
 ***1. dag_load_file_to_dwh.py:***<br />
 This example show how to get file with data from the web and load into specified DWH.
 In below screenshot you may find successfully loaded data into Postgres DWH.
-![alt text](https://github.com/rusmansurov/Demo/blob/develop/docker/etc/images/dag_load_file_to_dwh.png)
+![alt text](https://github.com/rusmansurov/Demo/blob/main/docker/etc/images/dag_load_file_to_dwh.png)
 
 ***2. dag_fail_telegram_message.py:***<br />
 Airflow supports different notifications including messangers.
 In this case we had generated fail in ETL processe on purpose. This fail called Telegram message with fail notification for specified Telegarm channel.
 It might be usefull for any business and IT departments.
-![alt text](https://github.com/rusmansurov/Demo/blob/develop/docker/etc/images/dag_fail_telegram_message.jpg)
+![alt text](https://github.com/rusmansurov/Demo/blob/main/docker/etc/images/dag_fail_telegram_message.jpg)
 
 ***3. dag_sales.py:***<br />
 In this case we have sales data downloaded into DWH, aggregated there and uploaded to the external folder. Airflow supports generation files aggregated in DWH data and uploading them into different external sources (Cloud, S3, ftp)
-![alt text](https://github.com/rusmansurov/Demo/blob/develop/docker/etc/images/dag_sales.png)
+![alt text](https://github.com/rusmansurov/Demo/blob/main/docker/etc/images/dag_sales.png)
 
 ***4. dag_branches.py:***<br />
 Airflow supports branches. It brings to ETL proccesses to be flexiblity. We can build 1 proccess with different ETL ways depends on conditions.<br />
@@ -47,4 +47,4 @@ def branch(**kwargs):
     else:
         return 'lower'
 ```
-![alt text](https://github.com/rusmansurov/Demo/blob/develop/docker/etc/images/dag_branches.png)
+![alt text](https://github.com/rusmansurov/Demo/blob/main/docker/etc/images/dag_branches.png)
