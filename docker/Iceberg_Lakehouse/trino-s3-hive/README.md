@@ -2,9 +2,13 @@
 This repository contains a Docker-based setup for deploying an Iceberg Lakehouse using Trino, MinIO, Hive Metastore, and PostgreSQL. It serves as a demonstration environment for working with Apache Iceberg, allowing you to experiment with modern data management approaches.
 
 **Project Components**
+
 *Trino* – a SQL query engine for data analytics.
+
 *MinIO* – an S3-compatible object storage for storing Parquet files.
+
 *Hive Metastore* – a metadata catalog for managing Iceberg table metadata.
+
 *PostgreSQL* – a database for storing Hive Metastore metadata.
 
 **Features**
@@ -27,4 +31,5 @@ Support for positional deletes and snapshot management in Iceberg.
 Once the setup is running, you can connect to Trino and run SQL queries against Iceberg tables:
 
 SHOW SCHEMAS FROM iceberg;
+
 SELECT * FROM iceberg.default.my_table;
