@@ -20,8 +20,9 @@ Support for positional deletes and snapshot management in Iceberg.
 **Installation & Setup**
 1. Clone the repository.
 2. Start the containers:
-
-   ```docker-compose up -d```
+   ```sh
+   docker-compose up -d
+   ```
 4. Verify that all services are running:
  - Trino is available at http://localhost:8080
  - MinIO is available at http://localhost:9000
@@ -31,9 +32,11 @@ Support for positional deletes and snapshot management in Iceberg.
 
 Once the setup is running, you can connect to Trino and run SQL queries against Iceberg tables by running trino CLI:
 
-```docker exec -it trino trino```
-
+```sh
+docker exec -it trino trino
 ```
+
+```sql
 SHOW SCHEMAS FROM datalake;
 
 CREATE TABLE datalake.default.customers (
