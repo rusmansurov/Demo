@@ -22,7 +22,7 @@ This deployment provides a containerized environment for working with **Apache I
 ---
 
 #### **How It Works:**  
-- **Nessie** acts as a versioned metastore, storing Iceberg metadata and supporting Git-like operations (branches, commits, rollbacks).  
+- **Nessie** acts as a versioned metastore, storing Iceberg metadata.  
 - **MinIO** is used for storing Iceberg data files and metadata files.  
 - **Trino** interacts with Iceberg via `dlh.properties`, using Nessie as the catalog.  
 
@@ -48,7 +48,7 @@ WITH (location = 's3://dlh/my_schema/');
 
 CREATE TABLE dlh.my_schema.customers (
     id integer,
-    customers varchar
+    customer_name varchar
     );
 
 SELECT * FROM dlh.my_schema.customers;

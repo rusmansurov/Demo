@@ -5,7 +5,7 @@ This repository contains a Docker-based setup for deploying an Iceberg Lakehouse
 **Project Components**
 
 1. Trino – a SQL query engine for data analytics.
-2. MinIO* – an S3-compatible object storage for storing Parquet files.
+2. MinIO – an S3-compatible object storage for storing files.
 3. Hive Metastore – a metadata catalog for managing Iceberg table metadata.
 4. PostgreSQL – a database for storing Hive Metastore metadata.
 

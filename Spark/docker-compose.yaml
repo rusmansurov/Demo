@@ -1,0 +1,89 @@
+version: "3.5"
+services:
+  spark-master:
+    image: my-custom-spark
+    hostname: spark-master
+    container_name: spark-master
+    ports:
+      - 8080:8080
+      - 7077:7077
+      - 4040:4040
+      - 15002:15002
+    volumes:
+       - ./apps:/opt/spark/apps
+       - ./data:/opt/spark/data
+       - ./logs:/opt/spark/logs
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_DRIVER_MEMORY=512m
+      - SPARK_WORKLOAD=master
+    networks:
+      - spark-network
+    
+  spark-worker-1:
+    image: my-custom-spark
+    hostname: spark-worker-1
+    container_name: spark-worker-1
+    ports:
+      - "9091:8080"
+      - "7001:7000"
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=3
+      - SPARK_WORKER_MEMORY=3g
+      - SPARK_WORKLOAD=worker
+    volumes:
+       - ./apps:/opt/spark/apps
+       - ./data:/opt/spark/data
+       - ./logs:/opt/spark/logs
+    networks:
+      - spark-network
+
+  spark-worker-2:
+    image: my-custom-spark
+    hostname: spark-worker-2
+    container_name: spark-worker-2
+    ports:
+      - "9092:8080"
+      - "7002:7000"
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=3
+      - SPARK_WORKER_MEMORY=3g
+      - SPARK_WORKLOAD=worker
+    volumes:
+       - ./apps:/opt/spark/apps
+       - ./data:/opt/spark/data
+       - ./logs:/opt/spark/logs
+    networks:
+      - spark-network
+
+  spark-history-server:
+    container_name: spark-history
+    image: my-custom-spark
+    hostname: spark-history
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_WORKLOAD=history
+      - SPARK_HISTORY_OPTS="-Dspark.history.fs.logDirectory=/opt/spark/logs"
+    volumes:
+      - ./logs:/opt/spark/logs
+    ports:
+      - 18080:18080
+    networks:
+      - spark-network
+
+volumes:
+  logs:
+    driver: local
+  storage-data:
+    driver: local
+
+networks:
+  spark-network:
+    driver: bridge
