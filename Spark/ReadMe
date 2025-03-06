@@ -1,0 +1,11 @@
+docker build -t my_spark:3.5.1 .
+
+docker-compose up -d
+
+/opt/spark/sbin/start-connect-server.sh --packages org.apache.spark:spark-connect_2.12:3.5.1
+
+docker exec -it spark-master bin/spark-submit --master spark://spark-master:7077 --name arrow-spark --deploy-mode client /opt/spark/apps/my_first_spark_job.py
+
+
+
+
