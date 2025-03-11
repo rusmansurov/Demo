@@ -1,8 +1,8 @@
-## **On GitHub Pages you can find dbt docs from this project:**
+On GitHub Pages you can find dbt docs from this project:
 https://rusmansurov.github.io/Demo/#!/overview
 
 
-## **!!! In this prokect is using local Postgres instance. But you can use other local or cloud database solution.**
+!!! In this prokect is using local Postgres instance. But you can use other local or cloud database solution.
 
 
 ## **Before dbt running:**
