@@ -38,4 +38,3 @@ models:
     mart:
       +materialized: view
       +tags: mart
-

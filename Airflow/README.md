@@ -7,18 +7,6 @@
 Use ***___docker-compose up___*** command from current folder 
 
 
-***Used services, solutions and languages:***
-1) Trino
-2) Minio
-3) Airflow
-4) Docker
-5) PostgreSQL
-6) Bash
-7) Python
-8) SQL
-9) YAML
-___
-
 ## Results for DAGs presented in "airflow_dags" folder:
 ***1. dag_load_file_to_dwh.py:***<br />
 This example show how to get file with data from the web and load into specified DWH.

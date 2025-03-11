@@ -10,7 +10,7 @@
 1) Trino
 2) Spark
 3) Minio
-4) Dbt
+4) Dbt. Please visit GitHub Pages for shared dbt docs: https://rusmansurov.github.io/Demo/#!/overview
 4) Airflow
 5) Docker
 6) PostgreSQL
@@ -20,4 +20,5 @@
 10) YAML
 
 
-*In each folder you may find demo with description in "README.md" file
+*docs/ folder contains dbt docs for sharing in GitHub Pages
+*etc/ folder contains images and files used in Demo repo
