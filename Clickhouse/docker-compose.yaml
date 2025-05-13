@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse
+    ports:
+      - "8123:8123"   # HTTP interface
+      - "9000:9000"   # Native client interface
+    volumes:
+      - ./data:/var/lib/clickhouse     # data storage
+      - ./config/users.xml:/etc/clickhouse-server/users.xml:ro  # users config
+volumes:
+  data:
+    name: clickhouse_data_volume
