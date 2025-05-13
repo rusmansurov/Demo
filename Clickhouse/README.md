@@ -20,6 +20,9 @@ After starting the container, run the following commands to create a user and as
 
 ```bash
 docker exec -it clickhouse bash
+```
+
+```bash
 /etc/clickhouse-client
 ```
 
