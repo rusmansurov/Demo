@@ -19,11 +19,7 @@ docker-compose up -d
 After starting the container, run the following commands to create a user and assign permissions:
 
 ```bash
-docker exec -it clickhouse bash
-```
-
-```bash
-/etc/clickhouse-client
+docker exec -it clickhouse clickhouse-client
 ```
 
 When prompted, use:
