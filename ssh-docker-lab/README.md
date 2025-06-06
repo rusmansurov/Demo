@@ -73,9 +73,4 @@ Then just run:
 ```bash
 ssh dockerlab
 ```
---
-
-## Author
-
-Created for educational purposes to explore SSH hands-on with Docker.
 
