@@ -6,7 +6,7 @@ This project demonstrates a basic SQL Injection attack using a vulnerable Python
 
 - Python 3.11
 - PostgreSQL 17
-- Docker & Docker Compose
+- Docker
 
 ## How it works
 
@@ -34,13 +34,14 @@ docker compose up --build
 
 The safe query will escape the input, and no SQL injection will occur.
 
-## ❌ Unsafe Output
+## Unsafe Output
 
 The unsafe query will execute:
 
 ```sql
 SELECT * FROM users WHERE username = 'admin'; DROP TABLE users; --'
 ```
+
 You will see output like:
 
 ```text
