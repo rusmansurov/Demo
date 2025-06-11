@@ -9,7 +9,7 @@ This project demonstrates how SQL injection works in a vulnerable query and how 
   - Executes an unsafe SQL query (with SQL injection).
   - Executes a safe query using a parameterized statement.
 
-## 🐳 Requirements
+## Requirements
 
 - Docker
 - Docker Compose
@@ -37,6 +37,6 @@ Executing: SELECT * FROM users WHERE username = 'admin' AND password = '' OR '1'
 
 # Lessons
 
-Never build SQL queries using string concatenation.
-Always use parameterized queries or ORM frameworks that do it for you.
-Validate and sanitize user input.
+- Never build SQL queries using string concatenation.
+- Always use parameterized queries or ORM frameworks that do it for you.
+- Validate and sanitize user input.
