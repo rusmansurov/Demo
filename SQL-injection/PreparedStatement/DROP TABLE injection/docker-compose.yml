@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: demo
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  app:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: demo
+      DB_USER: demo
+      DB_PASS: demo
+    volumes:
+      - .:/code
+    working_dir: /code
