@@ -1,10 +1,11 @@
-# Demonstration Apache Spark in Docker
+# Demonstration Apache Spark 4.0 in Docker with MinIO Cloud storage
 
 This repository contains a demonstration Apache Spark Docker cluster that simulates distributed computing as it would work in real-world production systems. The cluster includes:
 
 - **Spark Master**
 - **Two Spark Workers**
-- **Spark History Server** (for viewing completed jobs)
+- **Spark History Server**
+- **MinIO Cloud storage**
 
 ## Features
 - Simulation of distributed computing
@@ -13,8 +14,8 @@ This repository contains a demonstration Apache Spark Docker cluster that simula
 - Easy setup and launch with Docker Compose
 
 ## Components
-- **Apache Spark 3.5.1** (Scala 2.12, Java 11, Ubuntu)
-- **Python 3 and pip**
+- **Apache Spark 4.0.0** (Scala 2.13, Java 17, Ubuntu)
+- **Python 3**
 - **Spark Master, two Workers, and History Server**
 - **Preconfigured settings and entrypoint.sh**
 
@@ -23,7 +24,7 @@ This repository contains a demonstration Apache Spark Docker cluster that simula
 
 ### 2. Build the Docker Image
 ```sh
-docker build -t my-custom-spark .
+docker build -t my-spark:4.0.0 .
 ```
 
 ### 3. Start the Cluster
@@ -36,13 +37,15 @@ docker-compose up -d
 - **Spark Worker 1 UI:** http://localhost:9091
 - **Spark Worker 2 UI:** http://localhost:9092
 - **Spark History Server:** http://localhost:18080
+- **MinIO WebUI:** http://localhost:9001
 
 ## Submit Example job
 ```sh
-docker exec -it spark-master bin/spark-submit --master spark://spark-master:7077 --deploy-mode client /opt/spark/apps/example.py
+docker exec -it spark-master spark-submit app/write_to_minio.py
 ```
 
-**Please find data in your local folder**: ./data
+**Find data in your local MinIO spark-demo bucket**
+- open MinIO WebUI in your browser: http://localhost:9001 with Login: `minioadmin` and Password: `minioadmin`
 
 
 
