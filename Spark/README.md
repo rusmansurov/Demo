@@ -45,9 +45,7 @@ docker exec -it spark-master spark-submit app/write_to_minio.py
 ```
 
 **Find data in your local MinIO spark-demo bucket**
-- open MinIO WebUI in your browser: http://localhost:9001
-`Login: minioadmin`
-`Password: minioadmin`
+- open MinIO WebUI in your browser: http://localhost:9001 with Login: `minioadmin` and Password: `minioadmin`
 
 
 
