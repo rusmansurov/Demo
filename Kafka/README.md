@@ -63,7 +63,7 @@ All CLI tools are run inside the `kafka-1` container:
 
 --
 
-## 📘 References
+## References
 
 * [Apache Kafka KRaft mode](https://kafka.apache.org/documentation/#kraft)
 * [Bitnami Kafka Docker](https://hub.docker.com/r/bitnami/kafka)

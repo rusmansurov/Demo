@@ -1,4 +1,4 @@
-# 🐳 SSH Docker Lab
+# SSH Docker Lab
 
 An educational project to learn **SSH** using **Docker**. This container runs an OpenSSH server with public key authentication so you can:
 
