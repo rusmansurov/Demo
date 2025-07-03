@@ -98,7 +98,6 @@ services:
     volumes:
       - ./spark-app:/opt/spark/app
       - spark-logs:/opt/spark/logs
-    entrypoint: /bin/bash
     stdin_open: true
     tty: true
     networks:
@@ -115,7 +114,6 @@ services:
       - MINIO_ROOT_PASSWORD=minioadmin
     volumes:
       - minio_data:/data
-      - ./minio/warehouse-policy.json:/etc/minio/warehouse-policy.json
     command: server /data --console-address ":9001"
     networks:
       - spark-net

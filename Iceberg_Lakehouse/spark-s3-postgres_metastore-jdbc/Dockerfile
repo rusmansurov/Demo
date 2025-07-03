@@ -6,7 +6,7 @@ ENV ICEBERG_VERSION=1.9.1 \
     AWS_SDK_VERSION=2.31.74 \
     SCALA_VERSION=2.12 \
     SPARK_HOME=/opt/spark \
-    PATH=$SPARK_HOME/bin:$PATH
+    PATH=/opt/spark/bin:$PATH
 
 WORKDIR /tmp
 
