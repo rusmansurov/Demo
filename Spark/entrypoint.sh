@@ -1,17 +1,19 @@
 #!/bin/bash
 set -e
 
+echo "Spark Mode: $SPARK_MODE"
+echo "Starting at $(date)"
+
+trap "echo 'Stopping Spark...'" SIGTERM
+
 case "$SPARK_MODE" in
   master)
-    echo "Starting Spark Master..."
     exec $SPARK_HOME/bin/spark-class org.apache.spark.deploy.master.Master
     ;;
   worker)
-    echo "Starting Spark Worker..."
-    exec $SPARK_HOME/bin/spark-class org.apache.spark.deploy.worker.Worker $SPARK_MASTER
+    exec $SPARK_HOME/bin/spark-class org.apache.spark.deploy.worker.Worker "$SPARK_MASTER"
     ;;
   history)
-    echo "Starting Spark History Server..."
     exec $SPARK_HOME/bin/spark-class org.apache.spark.deploy.history.HistoryServer
     ;;
   *)
