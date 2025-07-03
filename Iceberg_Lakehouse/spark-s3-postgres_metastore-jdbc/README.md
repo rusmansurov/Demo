@@ -138,7 +138,7 @@ This script demonstrates key Iceberg features:
 
 ---
 
-## 🧹 Stop and Clean Up
+## Stop and Clean Up
 
 ```bash
 docker compose down -v
