@@ -116,7 +116,7 @@ Table after rollback:
 
 ---
 
-## 🔍 What `advanced_iceberg_demo.py` Does
+## What `advanced_iceberg_demo.py` Does
 
 This script demonstrates key Iceberg features:
 
@@ -128,7 +128,7 @@ This script demonstrates key Iceberg features:
 
 ---
 
-## 📦 Configuration Overview
+## Configuration Overview
 
 | Component  | Configuration                                                |
 | ---------- | ------------------------------------------------------------ |
