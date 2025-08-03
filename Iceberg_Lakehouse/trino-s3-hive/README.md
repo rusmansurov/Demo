@@ -4,10 +4,12 @@ This repository contains a Docker-based setup for deploying an Iceberg Lakehouse
 
 **Project Components**
 
-1. Trino – a SQL query engine for data analytics.
-2. MinIO – an S3-compatible object storage for storing files.
-3. Hive Metastore – a metadata catalog for managing Iceberg table metadata.
-4. PostgreSQL – a database for storing Hive Metastore metadata.
+| Component          | Purpose                                        |
+| ------------------ | ---------------------------------------------- |
+| **Trino**          | SQL engine for distributed analytics           |
+| **MinIO**          | S3-compatible object storage for Parquet files |
+| **Hive Metastore** | Catalog for managing Iceberg table metadata    |
+| **PostgreSQL**     | Stores Hive Metastore metadata                 |
 
 **Features**
 
@@ -28,7 +30,7 @@ Support for positional deletes and snapshot management in Iceberg.
  - MinIO is available at http://localhost:9000
  - Hive Metastore uses PostgreSQL for metadata storage.
 
-**Usage**
+**Quick start**
 
 Once the setup is running, you can connect to Trino and run SQL queries against Iceberg tables by running trino CLI:
 
@@ -37,16 +39,35 @@ docker exec -it trino trino
 ```
 
 ```sql
-SHOW SCHEMAS FROM datalake;
+SHOW SCHEMAS FROM iceberg;
 
-CREATE TABLE datalake.default.customers (
+CREATE TABLE iceberg.default.customers (
     id integer,
     customer_name varchar
     )
  WITH (
     format = 'PARQUET',
-    location='s3a://datalake/trino/hive_catalog/customers')
+    location='s3a://dlh/customers')
+ ;
+
+ INSERT INTO iceberg.default.customers (id, customer_name) VALUES
+      (1, 'John'), 
+      (2, 'Rachel')
  ;
  
-SELECT * FROM datalake.default.customers;
+SELECT * FROM iceberg.default.customers;
 ```
+
+## Demo Queries
+
+Explore the `demo/` folder — it contains 7 well-documented SQL files demonstrating:
+
+1. **Table creation and querying**
+2. **Snapshot isolation**
+3. **Schema evolution**
+4. **Positional deletes**
+5. **Partitioned tables and partition pruning**
+6. **Metadata inspection**
+7. **Rollback to snapshot**
+
+Run these queries via Trino and psql CLI or your favorite SQL editor (e.g., DBeaver).
