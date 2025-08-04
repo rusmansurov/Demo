@@ -1,5 +1,5 @@
 -- Set catalog and schema
-USE USE dlh.my_schema;
+USE dlh.my_schema;
 
 -- View all snapshots
 SELECT snapshot_id, committed_at

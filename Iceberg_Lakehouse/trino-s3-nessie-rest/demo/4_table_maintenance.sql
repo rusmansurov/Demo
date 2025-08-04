@@ -1,5 +1,5 @@
 -- Set catalog and schema
-USE USE dlh.my_schema;
+USE dlh.my_schema;
 
 -- Compact small files
 ALTER TABLE demo_users EXECUTE optimize;

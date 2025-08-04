@@ -1,4 +1,4 @@
--- Set context
+-- Set catalog and schema
 USE pg_catalog.datalake;
 
 -- Create a basic Iceberg table

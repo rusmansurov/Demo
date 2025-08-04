@@ -1,5 +1,5 @@
 -- Set catalog and schema
-USE USE dlh.my_schema;
+USE dlh.my_schema;
 
 -- Drop if exists
 DROP TABLE IF EXISTS users;
