@@ -1,5 +1,5 @@
 -- Set catalog and schema
-USE iceberg.default;
+USE USE dlh.my_schema;
 
 -- Drop table if it exists
 DROP TABLE IF EXISTS sales;

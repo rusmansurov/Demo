@@ -1,5 +1,5 @@
 -- Set catalog and schema
-USE iceberg.default;
+USE pg_catalog.datalake;
 
 -- Drop table if it exists
 DROP TABLE IF EXISTS sales;

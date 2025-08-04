@@ -1,3 +1,6 @@
+-- Set catalog and schema
+USE USE dlh.my_schema;
+
 -- Add new column
 ALTER TABLE demo_users ADD COLUMN email VARCHAR;
 

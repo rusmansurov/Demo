@@ -1,6 +1,9 @@
+-- Set catalog and schema
+USE pg_catalog.datalake;
+
 -- View all snapshots
 SELECT snapshot_id, committed_at
-FROM "iceberg"."default"."demo_users$snapshots";
+FROM pg_catalog.datalake.demo_users$snapshots;
 
 -- Travel to specific snapshot (insert your snapshot_id value from previous query)
 SELECT * FROM demo_users FOR VERSION AS OF <snapshot_id>;

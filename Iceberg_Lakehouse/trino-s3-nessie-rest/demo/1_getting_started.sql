@@ -1,5 +1,5 @@
--- Set context
-USE iceberg.default;
+-- Set catalog and schema
+USE USE dlh.my_schema;
 
 -- Create a basic Iceberg table
 CREATE TABLE IF NOT EXISTS demo_users (

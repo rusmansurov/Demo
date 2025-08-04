@@ -1,3 +1,6 @@
+-- Set catalog and schema
+USE USE dlh.my_schema;
+
 -- View all snapshots
 SELECT snapshot_id, committed_at
 FROM "iceberg"."default"."demo_users$snapshots";

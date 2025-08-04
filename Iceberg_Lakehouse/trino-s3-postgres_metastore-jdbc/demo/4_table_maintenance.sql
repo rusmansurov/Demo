@@ -1,3 +1,6 @@
+-- Set catalog and schema
+USE pg_catalog.datalake;
+
 -- Compact small files
 ALTER TABLE demo_users EXECUTE optimize;
 

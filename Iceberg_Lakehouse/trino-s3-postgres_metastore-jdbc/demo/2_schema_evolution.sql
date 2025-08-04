@@ -1,3 +1,6 @@
+-- Set catalog and schema
+USE pg_catalog.datalake;
+
 -- Add new column
 ALTER TABLE demo_users ADD COLUMN email VARCHAR;
 

@@ -1,5 +1,5 @@
 -- Set context
-USE iceberg.default;
+USE pg_catalog.datalake;
 
 -- Create a basic Iceberg table
 CREATE TABLE IF NOT EXISTS demo_users (
