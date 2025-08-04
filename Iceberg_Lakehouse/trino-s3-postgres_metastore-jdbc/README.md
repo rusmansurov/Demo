@@ -33,3 +33,18 @@ create table pg_catalog.datalake.customers (
 
 select * from pg_catalog.datalake.customers;
 ```
+
+#### **Demo Queries** 
+
+The `demo/` folder contains practical SQL scripts that demonstrate key Iceberg features in Trino. Each script focuses on a specific capability:
+
+| File                           | Description                                                                                             |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------- |
+| `1_getting_started.sql`        | Create your first Iceberg table and insert initial data. Great starting point for newcomers.            |
+| `2_schema_evolution.sql`       | Show how Iceberg handles **schema changes** (add, update, delete columns and rows).                     |
+| `3_time_travel.sql`            | Explore **time travel** with snapshots: query old data and roll back to previous states.                |
+| `4_table_maintenance.sql`      | Perform **table maintenance**: compaction, snapshot cleanup, and orphan file removal.                   |
+| `5_partition_pruning.sql`     | Demonstrate **partitioning** and how Iceberg supports **partition pruning** for fast scans.             |
+| `6_query_plans_and_joins.sql`  | Compare **join strategies** (broadcast vs. partitioned) and analyze Trino query plans.                  |
+
+Run these queries via Trino and psql CLI or your favorite SQL editor (e.g., DBeaver).
