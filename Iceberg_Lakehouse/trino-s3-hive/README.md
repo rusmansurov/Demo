@@ -1,4 +1,4 @@
-**Iceberg Lakehouse on Docker**
+## Iceberg Lakehouse on Docker**
 
 This repository contains a Docker-based setup for deploying an Iceberg Lakehouse using Trino, MinIO, Hive Metastore, and PostgreSQL. It serves as a demonstration environment for working with Apache Iceberg, allowing you to experiment with modern data management approaches.
 
@@ -30,7 +30,7 @@ Support for positional deletes and snapshot management in Iceberg.
  - MinIO is available at http://localhost:9000
  - Hive Metastore uses PostgreSQL for metadata storage.
 
-**Quick start**
+## Quick start
 
 Once the setup is running, you can connect to Trino and run SQL queries against Iceberg tables by running trino CLI:
 
@@ -60,14 +60,16 @@ SELECT * FROM iceberg.default.customers;
 
 ## Demo Queries
 
-Explore the `demo/` folder — it contains 7 well-documented SQL files demonstrating:
+The `demo/` folder contains practical SQL scripts that demonstrate key Iceberg features in Trino. Each script focuses on a specific capability:
 
-1. **Table creation and querying**
-2. **Snapshot isolation**
-3. **Schema evolution**
-4. **Positional deletes**
-5. **Partitioned tables and partition pruning**
-6. **Metadata inspection**
-7. **Rollback to snapshot**
+| File                           | Description                                                                                             |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------- |
+| `1_getting_started.sql`        | Create your first Iceberg table and insert initial data. Great starting point for newcomers.            |
+| `2_schema_evolution.sql`       | Show how Iceberg handles **schema changes** (add, update, delete columns and rows).                     |
+| `3_time_travel.sql`            | Explore **time travel** with snapshots: query old data and roll back to previous states.                |
+| `4_table_maintenance.sql`      | Perform **table maintenance**: compaction, snapshot cleanup, and orphan file removal.                   |
+| `5_partition_pruning.sql`     | Demonstrate **partitioning** and how Iceberg supports **partition pruning** for fast scans.             |
+| `6_query_plans_and_joins.sql`  | Compare **join strategies** (broadcast vs. partitioned) and analyze Trino query plans.                  |
+| `7_catalog_under_the_hood.sql` | Peek under the hood: see how Iceberg integrates with **Hive Metastore**, **PostgreSQL**, and **MinIO**. |
 
 Run these queries via Trino and psql CLI or your favorite SQL editor (e.g., DBeaver).
